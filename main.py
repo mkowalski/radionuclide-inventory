@@ -1,0 +1,5 @@
+from __future__ import print_function
+from findradionuclideinventory import FindRadionuclideInventory
+
+
+FindRadionuclideInventory()
