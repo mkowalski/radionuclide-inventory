@@ -27,3 +27,28 @@ def scanner(name, vector, comment):
     DataFile.close()
     outcome = 1.0
     return outcome
+
+def oldScanner(name, vector, comment):
+    outcome=-1.0
+## Read every line of the file called name
+    if os.path.isfile(name): # Does the file exist?
+      DataFile = open(name,'r')
+    else:
+			print "scanner: the file",name,"does not exist"
+ 			return -1.0
+    for line_with_characters in DataFile.readlines():
+## Skip the comments, which begin with "comment" (e.g., '#')
+      if ( ( string.find( line_with_characters, comment) ) < 0 ):
+# The element vector[0][4] will be the first line, fifth column
+         numbers=[]
+         for value in string.split(line_with_characters):
+             try:
+                 numbers.append(float(value))
+             except:
+                 numbers.append(value)
+         if numbers!=[]:
+             vector.append(numbers)
+    DataFile.close()
+    outcome=1.0
+    return outcome
+#
