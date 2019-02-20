@@ -48,6 +48,11 @@ def FMA(SE_FMA, inventory):
     f.write(",".join([','.join(map(str, item)) for item in RN_list]) + "\n")
     # f.write("#"+"".join(RN_list)+"\n")
     f.close()
+
+    from parse_results import parseResults
+    parseResults("Results/Aluminium_6060_RA/RadionuclideInventory_RA_",
+                 "Results/Aluminium_6060_RA/RadionuclideInventory_RA_new.csv")
+
     print(RN_list)
 
     return (RN_list)
