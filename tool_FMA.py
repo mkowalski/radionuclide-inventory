@@ -27,9 +27,7 @@ def FMA(SE_FMA, inventory):
                 emission = b[4]
                 FMA_fraction3 = (emission == 1)
 
-                inventoryWithFMA.append(
-                    [name, activity, FMA_fraction3, declaration, maxlimit,
-                     limit])
+                inventoryWithFMA.append([name, activity, FMA_fraction3, declaration, maxlimit, limit])
 
                 sum_activity = sum_activity + activity
 
@@ -41,23 +39,18 @@ def FMA(SE_FMA, inventory):
         if c[4] > c[1] / sum_activity * SE_FMA > c[3]:
             RN_list.append([c[0], c[1] / sum_activity * SE_FMA])
 
-    # print(RN_list)
+    RN_list.sort(lambda x, y: cmp(y[1], x[1]))
+    RN_list.sort(key=lambda x: x[0])
 
-    f = open('jakis-moj-plik', 'w')
-    f.write("{}\n".format(RN_list))
+    f = open("Results/Aluminium_6060_RA/RadionuclideInventory_RA_", 'a+')
+
+    # f.write(",".join(map(lambda x: str(x), RN_list))+"\n")
+    f.write(",".join([','.join(map(str, item)) for item in RN_list]) + "\n")
+    # f.write("#"+"".join(RN_list)+"\n")
     f.close()
+    print(RN_list)
 
     return (RN_list)
-
-    # fingerprints2 = []
-    # total_activity = 0.
-    # for c in inventoryWithFMA:
-    # if c[1]<total_FMA*SE_FMA >= c[3]:
-    # fingerprints2.append([c[0],c[1]])
-
-    # fingerprints2.sort(lambda x,y: cmp(y[1],x[1]))
-
-    # return(fingerprints2)
 
 
 def ValueORAP(inventory):

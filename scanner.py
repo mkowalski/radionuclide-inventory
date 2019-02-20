@@ -34,8 +34,8 @@ def oldScanner(name, vector, comment):
     if os.path.isfile(name): # Does the file exist?
       DataFile = open(name,'r')
     else:
-			print "scanner: the file",name,"does not exist"
- 			return -1.0
+            print "scanner: the file",name,"does not exist"
+            return -1.0
     for line_with_characters in DataFile.readlines():
 ## Skip the comments, which begin with "comment" (e.g., '#')
       if ( ( string.find( line_with_characters, comment) ) < 0 ):
