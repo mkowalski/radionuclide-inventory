@@ -14,7 +14,6 @@ def FindRadionuclideInventory ():
     FMA(finv)
 
     print originalInventory
-
     return
 
 

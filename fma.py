@@ -27,3 +27,7 @@ def FMA(inventory):
                                  b['maxlimit']])
 
         total_FMA = total_FMA + FMA_fraction1 + FMA_fraction3
+
+
+    print inventoryWithFMA
+    return
