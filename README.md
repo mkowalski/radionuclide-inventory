@@ -1,6 +1,6 @@
 # radionuclide-inventory
 
-## Branch `master`
+## Tag `15-02-2019`
 
 ```python2 main.py```
 
@@ -8,7 +8,7 @@ The script is supposed to read a set of rules and values from the `Andra FMA` an
 
 `FMA` performs a simple analysis over the parsed data against nuclides provided as the inventory. In the sample code three selected nuclides are analysed instead of reading them from the real data.
 
-## Branch `statistics`
+## Branch `master`
 
 ```python2 main.py```
 
