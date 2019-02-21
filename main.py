@@ -1,4 +1,3 @@
-from __future__ import print_function
 from fma import FMA
 from scanner import scanner
 
@@ -14,6 +13,9 @@ def FindRadionuclideInventory ():
 
     FMA(finv)
 
-    return ()
+    print originalInventory
+
+    return
+
 
 FindRadionuclideInventory()
